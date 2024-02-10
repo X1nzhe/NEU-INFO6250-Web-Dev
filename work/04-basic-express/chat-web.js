@@ -6,18 +6,18 @@ const chatWeb = {
   // chatPage() returns the HTML for the page
   // it calls the other methods to generate the HTML for different sections
   chatPage: function(chat) {
-    // Fill in/modify anything below!
     return `
       <!doctype html>
       <html>
         <head>
-          <title>Chat</title>
+            <link rel="stylesheet" type="text/css" href="chat-web.css">
+            <title>Chat</title>
         </head>
         <body>
-          <div id="chat-app">
-            ${chatWeb.getUserList(chat)}
-            ${chatWeb.getMessageList(chat)}
-            ${chatWeb.getOutgoingSection(chat)}
+          <div id="chat-app">   
+              ${chatWeb.getUserList(chat)}
+              ${chatWeb.getMessageList(chat)}
+              ${chatWeb.getOutgoingSection(chat)}
           </div>
         </body>
       </html>
@@ -26,9 +26,19 @@ const chatWeb = {
 
   getMessageList: function(chat) {
     return `<ol class="messages">` +
-      // Fill in
       // Generate the HTML for the list of messages
-      `</ol>`;
+    Object.values(chat.messages).map( message => `
+      <li>
+        <div class="message">
+            <div class="sender-info">
+              <img class="avatar" alt="avatar of ${message.sender}" src="//placekitten.com/60/60?image=${message.sender.charCodeAt(0)%16}"/>  
+              <span class="username">${message.sender}</span>
+            </div>
+            <p class="message-text">${message.text}</p>
+        </div>
+      </li>
+    `).join('')+
+        `</ol>`;
   },
   getUserList: function(chat) {
     // This is a bit of a complex structure
@@ -48,8 +58,16 @@ const chatWeb = {
     `</ul>`;
   },
   getOutgoingSection: function() {
-    // Fill in
+    // Only single user can send message in this assignment
+    const username = 'Bao';
     // Generate the HTML for a form to send a message
+    return `<div class="outgoing">
+              <form action="/chat" method="POST">
+                  <input type="hidden" name="username" value="${username}">
+                  <textarea class="to-send" name="text" placeholder="Enter message to send"/></textarea>
+                  <button class="submit-button" type="submit">Send</button>
+              </form>
+          </div>`;
   }
 };
 module.exports = chatWeb;

@@ -1,0 +1,117 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    overflow:auto;
+    background-color: #E8DAEF ;
+}
+
+body {
+    height: 96%;
+    margin: 1rem;
+    padding: 0.5rem;
+    overflow-y:auto;
+    font-family: sans-serif;
+    border: 0.2em dashed #C39BD3;
+    background-color: #D6EAF8;
+}
+
+#chat-app {
+    display: grid;
+    grid-template-areas:
+            "users messages"
+            "users outgoing";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    grid-gap: 0.5rem;
+    height: 100%;
+    margin: 0;
+}
+
+.users {
+    grid-area: users;
+    padding: 1rem;
+    margin: 0;
+    overflow-y: auto;
+    list-style-type: "\1F431" ;
+    border-radius: 5px;
+    background-color: #85C1E9;
+}
+
+.user {
+    margin: 0.5rem;
+}
+
+.messages {
+    grid-area: messages;
+    padding: 0.5rem;
+    margin: 0;
+    overflow-y: auto;
+    list-style-type: none;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.5rem auto;
+    border-radius: 8px;
+    background-color: #FDFEFE;
+}
+
+.sender-info {
+    display: flex;
+    flex: none;
+    align-items:  center;
+    justify-content:  flex-start;
+    width: 8rem;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-text {
+    display: flex;
+    flex: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.outgoing {
+    grid-area: outgoing;
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2rem;
+}
+
+.to-send {
+    display: flex;
+    align-items: stretch;
+    resize: none;
+    width: 98%;
+    margin:  0.5rem;
+    background-color: #FDFEFE;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    margin:  0.5rem;
+}
+
+
+
