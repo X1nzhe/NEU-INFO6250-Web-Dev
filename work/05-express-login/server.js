@@ -56,7 +56,7 @@ app.post('/login', (req, res) => {
     if (!username || !/^[a-zA-Z0-9]+$/.test(username)) {
         const errorMessage = '400 Bad Request: The username is made up of letters or numbers only!';
         const errorCode = 400;
-        res.status(400).send(errorWeb.errorPage(errorCode, errorMessage));
+        res.status(errorCode).send(errorWeb.errorPage(errorCode, errorMessage));
         return;
     }
 
@@ -64,7 +64,7 @@ app.post('/login', (req, res) => {
     if (username.toLowerCase() === 'dog') {
         const errorMessage = '403 Forbidden: \'dog\' is not allowed!';
         const errorCode = 403;
-        res.status(403).send(errorWeb.errorPage(errorCode, errorMessage));
+        res.status(errorCode).send(errorWeb.errorPage(errorCode, errorMessage));
         return;
     }
 
