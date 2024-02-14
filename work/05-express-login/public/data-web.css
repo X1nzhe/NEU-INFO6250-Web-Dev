@@ -1,0 +1,72 @@
+#data-page {
+    display: grid;
+    grid-template-areas:
+                "user"
+                "main-panel";
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 80%;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+#main-panel {
+    display: grid;
+    grid-template-areas:
+                "word"
+                "change-form"
+                "logout";
+    grid-template-rows: 0.4fr 0.2fr 0.5fr;
+    grid-gap: 0;
+    border-radius: 5px;
+    background-color: #E8F5E9;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.current-user {
+    grid-area: user;
+    align-self: baseline;
+    justify-self: start;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.stored-word {
+    grid-area: word;
+    align-self: end;
+    justify-self: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+.stored-word p {
+    font-style: italic;
+}
+
+.change-word {
+    grid-area: change-form;
+    align-self: baseline;
+    justify-self: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+.logout-button {
+    grid-area: logout;
+    align-self: baseline;
+    justify-self: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+

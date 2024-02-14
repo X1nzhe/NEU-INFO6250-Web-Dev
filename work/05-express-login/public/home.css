@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    overflow:auto;
+    background-color: #E8DAEF ;
+}
+
+body {
+    display: flex;
+    height: 98%;
+    margin: 0;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+    font-family: sans-serif;
+    border: 0.2em dashed #C39BD3;
+    border-radius: 5px;
+    background-color: #D6EAF8;
+}
