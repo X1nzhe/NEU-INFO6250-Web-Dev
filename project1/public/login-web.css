@@ -1,0 +1,27 @@
+#header {
+    margin: 0;
+    padding-top: 20rem;
+}
+
+#login-greet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-style: italic;
+}
+#login-page {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.login-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+}
