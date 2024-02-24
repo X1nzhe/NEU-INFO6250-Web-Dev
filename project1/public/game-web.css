@@ -1,0 +1,202 @@
+#game-page {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "game-panel"
+        "footer";
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 80%;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    display: grid;
+    grid-template-areas:
+    "heading statistics";
+    grid-template-rows: min-content;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    width: 85%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#heading {
+    grid-area:heading;
+    padding: 0;
+}
+
+#statistics {
+    grid-area:statistics;
+    padding: 0;
+}
+
+#top-players {
+    grid-area: statistics;
+    margin: 0;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: #EBF5FB;
+    border: 0.2em dotted #C39BD3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: auto;
+}
+
+#top-players .subheading {
+    margin: 0;
+}
+
+.players {
+    list-style: square;
+    margin: 0;
+    padding-left: 1.5em;
+    height: 14vh;
+}
+
+.no-players {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 14vh;
+}
+
+.players .player{
+    padding: 0.3em;
+    margin: 0;
+}
+
+#game-panel {
+    display: grid;
+    grid-template-areas:
+        "left-panel right-panel";
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 0;
+    border-radius: 5px;
+    background-color: #EBF5FB;
+    height: 100%;
+    width: fit-content;
+    min-width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+#left-panel {
+    grid-area: left-panel;
+    display: grid;
+    grid-template-areas:"possible-words";
+    grid-template-rows: min-content;
+    padding: 1rem;
+    margin: 0;
+    height: 50vh;
+    width: fit-content;
+}
+
+#right-panel {
+    grid-area: right-panel;
+    display: grid;
+    grid-template-areas:
+            "valid-guesses"
+            "guessed-words"
+            "message"
+            "guess-form";
+    grid-template-rows: min-content 1fr 0.5fr min-content;
+    grid-gap: 0.5rem;
+    padding: 1rem;
+    margin: 0;
+    width: 80%;
+    min-width: 80%;
+    height: 50vh;
+}
+
+#footer {
+    grid-area: footer;
+    display:flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 0;
+}
+
+.words-list {
+    grid-area:possible-words;
+    columns: 7;
+    list-style-type:none;
+    display: block;
+    padding: 0.2rem;
+    margin: 0;
+    background-color: #FFFFFF;
+    border: 0.2em solid #C39BD3;
+    height: 43vh;
+    overflow-y: auto;
+    width: fit-content;
+}
+
+.words-list p {
+    padding: 0;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0.3em;
+}
+
+#valid-guesses {
+    grid-area: valid-guesses;
+}
+
+#guessed-words {
+    grid-area: guessed-words;
+    list-style-type: decimal;
+    background-color: #FFFFFF;
+    border: 0.2em solid #C39BD3;
+    padding-left: 2rem;
+    margin: 0;
+    overflow-y: auto;
+    height: 30vh;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+#message-panel {
+    grid-area:message;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border: 0.2em solid #C39BD3;
+    height: 6vh;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 0;
+    margin: 0;
+}
+
+.guess-panel {
+    grid-area: guess-form;
+}
+
+#new-game-button {
+    margin: 0;
+    padding-right: 1rem;
+}
+
+#logout-button {
+    margin:0;
+    padding-left: 1rem;
+}
