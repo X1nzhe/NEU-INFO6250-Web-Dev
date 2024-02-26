@@ -114,7 +114,7 @@ function addToCart(product){
 }
 
 function setQuantityById(productId,newQuantity) {
-    const itemIndex = cartState.findIndex( item => item.id === parseInt(productId));
+    const itemIndex = cartState.findIndex( item => item.id === productId);
 
     if (itemIndex !== -1) {
         if (newQuantity) {

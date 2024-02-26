@@ -49,7 +49,7 @@ cartPageEl.addEventListener('click', (e) => {
 cartPageEl.addEventListener('change', (e) =>{
     if (e.target.classList.contains('item-quantity')) { // Updates the quantity of cats
         const newQuantity = parseInt(e.target.value);
-        const productId = e.target.dataset.id;
+        const productId =  parseInt(e.target.dataset.id);
         if ( newQuantity>=0 ) { // Only passes valid input
             setQuantityById(productId, newQuantity);
             render();
