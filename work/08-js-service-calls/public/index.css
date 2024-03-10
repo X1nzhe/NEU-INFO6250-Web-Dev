@@ -1,0 +1,139 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    overflow:auto;
+    background-color: #E8DAEF ;
+}
+
+body {
+    display: flex;
+    height: 98%;
+    margin: 0;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+    font-family: sans-serif;
+    border: 0.2em dashed #C39BD3;
+    border-radius: 5px;
+    background-color: #D6EAF8;
+}
+
+#app {
+    height: 50%;
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#login-view {
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+#word-view {
+    display: grid;
+    grid-template-areas:
+                "user"
+                "main-panel";
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main-panel {
+    display: grid;
+    grid-template-areas:
+                "word"
+                "change-form"
+                "logout";
+    grid-template-rows: 0.4fr 0.2fr 0.5fr;
+    grid-gap: 0;
+    border-radius: 5px;
+    background-color: #E8F5E9;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#current-user {
+    grid-area: user;
+    align-self: baseline;
+    justify-self: start;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#stored-word {
+    grid-area: word;
+    align-self: end;
+    justify-self: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+#stored-word p {
+    font-style: italic;
+}
+
+#change-word {
+    grid-area: change-form;
+    align-self: baseline;
+    justify-self: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+#logout {
+    grid-area: logout;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: baseline;
+    justify-self: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+#error-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+}
+
+#error-message {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
