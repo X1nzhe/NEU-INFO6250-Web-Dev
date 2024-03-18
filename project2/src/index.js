@@ -30,38 +30,29 @@ function render() {
 
     if (clientState.username) {
 
-        Promise.all([refreshMessagesList(), refreshUsersList()])
-            .then( () => {
-                if (clientState.isInitialLogin) {
+        if (clientState.isInitialLogin) {
 
-                    views.showChatView(clientState.username,[],[]);
-                    views.showLoadingIndicator();
+            views.showChatView(clientState.username,[],[]);
+            views.showLoadingIndicator();
 
-                    setTimeout( () => { //Display the loading indicator for 2 seconds
+            setTimeout( () => { //Display the loading indicator for 2 seconds
 
-                        views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
+                views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
 
-                        // Scroll the messages list to the bottom for showing new messages
-                        views.scrollMessagesListToBottom();
+                // Scroll the messages list to the bottom for showing new messages
+                views.scrollMessagesListToBottom();
 
-                    },2000);
+            },2000);
 
-                    clientState.isInitialLogin = false;
-                } else {
+            clientState.isInitialLogin = false;
+        } else {
 
-                    views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
+            views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
 
-                    // Scroll the messages list to the bottom for showing new messages
-                    views.scrollMessagesListToBottom();
-                }
+            // Scroll the messages list to the bottom for showing new messages
+            views.scrollMessagesListToBottom();
+        }
 
-            })
-            .catch( err => {
-                // Failed to update client state due to some reason
-                const errorMessage =  services.MESSAGES_TO_USER[err.error] || services.MESSAGES_TO_USER.default;
-                views.showErrorMessageView(errorMessage);
-
-            })
     } else {
         views.showLoginView();
     }
@@ -152,7 +143,7 @@ function renderMessagesList() {
                 views.showMessagesList(clientState.messagesList);
             }
         })
-        .catch( () => {
+        .catch( err => { // We ignore this error since errors have been stored in the refreshMessagesList function
             render();
         });
 }
@@ -164,7 +155,7 @@ function renderUsersList() {
                 views.showUsersList(clientState.usersList);
             }
         })
-        .catch( () => {
+        .catch( err => { // We ignore this error since errors have been stored in the refreshUsersList function
             render();
         });
 }
@@ -188,12 +179,12 @@ appEl.addEventListener('click', (e) => {
 
         e.preventDefault(); // calling service instead of submitting
 
-
         const username = document.querySelector('#username').value;
         services.fetchLogin(username)
             .then( response => {
 
                 clientState.username = response.username;
+                return Promise.all([refreshMessagesList(), refreshUsersList()]);
 
             })
             .catch(err => {
@@ -224,7 +215,10 @@ appEl.addEventListener('click', (e) => {
 
                     if (response.username !== clientState.username) {
                         resetClientState();
+                        return;
                     }
+
+                    return Promise.all([refreshMessagesList(), refreshUsersList()]);
 
                 })
                 .catch(err => {
@@ -240,7 +234,6 @@ appEl.addEventListener('click', (e) => {
                     render();
                 });
         }
-
         return;
     }
 

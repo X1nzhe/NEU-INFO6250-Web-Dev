@@ -134,7 +134,7 @@ h1 {
 .messages {
     padding: 0;
     margin: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     list-style-type: none;
 }
 
