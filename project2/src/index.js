@@ -28,34 +28,34 @@ function render() {
         return;
     }
 
-    if (clientState.username) {
+    if (!clientState.username) {
+        views.showLoginView();
+        return;
+    }
 
-        if (clientState.isInitialLogin) {
+    if (clientState.isInitialLogin) {
 
-            views.showChatView(clientState.username,[],[]);
-            views.showLoadingIndicator();
+        views.showChatView(clientState.username,[],[]);
+        views.showLoadingIndicator();
 
-            setTimeout( () => { //Display the loading indicator for 2 seconds
-
-                views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
-
-                // Scroll the messages list to the bottom for showing new messages
-                views.scrollMessagesListToBottom();
-
-            },2000);
-
-            clientState.isInitialLogin = false;
-        } else {
+        setTimeout( () => { //Display the loading indicator for 2 seconds
 
             views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
 
             // Scroll the messages list to the bottom for showing new messages
             views.scrollMessagesListToBottom();
-        }
 
+        },2000);
+
+        clientState.isInitialLogin = false;
     } else {
-        views.showLoginView();
+
+        views.showChatView(clientState.username, clientState.usersList, clientState.messagesList);
+
+        // Scroll the messages list to the bottom for showing new messages
+        views.scrollMessagesListToBottom();
     }
+
 }
 
 
