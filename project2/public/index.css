@@ -1,0 +1,243 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow:auto;
+    background-color: #E8DAEF ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    max-width: 800px;
+    min-width: 750px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    overflow-y:auto;
+    font-family: sans-serif;
+    border: 0.2em dashed #C39BD3;
+    background-color: #D6EAF8;
+}
+
+#chat-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-style: italic;
+    margin-left: -1rem;
+}
+
+#login-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:min-content;
+    margin-top: -10rem;
+    padding: 0;
+}
+
+#login-form {
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+#chat-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#greeting {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+#main-panel {
+    display: grid;
+    grid-template-areas:
+            "users messages"
+            "users outgoing";
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-gap: 0.5rem;
+    height: 80%;
+    margin: 0;
+}
+
+#users-list {
+    grid-area: users;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+.users {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: auto;
+    list-style-type: "\1F431" ;
+    border-radius: 5px;
+    background-color: #85C1E9;
+}
+
+.users li {
+    margin-left: 2rem;
+}
+
+.user {
+    width: 100%;
+    padding: 0;
+    margin: 0.5rem;
+}
+.user .username {
+    display: block;
+    font-weight: bold;
+    word-wrap: break-word
+}
+
+#messages-list {
+    grid-area: messages;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-y: auto;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+.messages {
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    list-style-type: none;
+}
+
+.message {
+    display: grid;
+    grid-template-areas:
+    "avatar username"
+    "avatar text";
+    grid-template-columns: 0.15fr 1fr;
+    grid-template-rows: 0.2fr auto;
+    margin: auto auto 0.5rem;
+    padding: 0.1em;
+    border-radius: 8px;
+    background-color: #FDFEFE;
+    align-items: flex-start;
+}
+
+
+.avatar {
+    grid-area: avatar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.5rem;
+}
+
+.message .username {
+    grid-area: username;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+}
+
+
+.message-text {
+    grid-area: text;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    padding-bottom: 0.5rem;
+    margin-left: 1rem;
+    align-self: start;
+
+}
+
+#outgoing {
+    grid-area: outgoing;
+    padding: 0;
+    margin-left: -0.5rem;
+}
+
+#message-form {
+    height: 100%;
+}
+
+#to-send {
+    display: flex;
+    align-items: stretch;
+    resize: none;
+    width: 95%;
+    margin:  0.5rem;
+    border-radius: 5px;
+    background-color: #FDFEFE;
+}
+
+#send-button {
+    display: flex;
+    align-items: center;
+    margin:  0.5rem;
+}
+
+#logout {
+    margin: 0;
+    padding: 1rem;
+}
+
+#error-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+}
+
+#error-message {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.loading-indicator {
+    position: fixed;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
