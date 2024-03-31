@@ -1,0 +1,96 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow:auto;
+  background-color: #E8DAEF ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  border: 0.2em dashed #C39BD3;
+  background-color: #D6EAF8;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 0.3em 0.8em;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.game {
+  display: grid;
+  grid-template-areas:
+          "greeting"
+          "guess"
+          "message";
+  grid-template-rows: 0.4fr 0.1fr 0.2fr;
+  grid-gap: 0;
+  height: 100%;
+  width:100%;
+}
+
+.greeting {
+  grid-area:greeting;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.guess {
+  grid-area: guess;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.message {
+  grid-area: message;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
