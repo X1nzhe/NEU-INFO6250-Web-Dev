@@ -70,8 +70,6 @@ app.delete('/api/v1/session', (req, res) => {
 // Stored Word
 
 app.get('/api/v1/word', (req, res) => {
-    // Session checks for these are very repetitive - a good place to abstract out
-    // I've left the repetitive sections here for ease of learning
     const sid = req.cookies.sid;
     const username = sid ? sessions.getSessionUser(sid) : '';
 
@@ -86,7 +84,6 @@ app.get('/api/v1/word', (req, res) => {
 });
 
 app.put('/api/v1/word', (req, res) => {
-    // Session checks for these are very repetitive - a good place to abstract out
     const sid = req.cookies.sid;
     const username = sid ? sessions.getSessionUser(sid) : '';
     if(!sid || !username) {
