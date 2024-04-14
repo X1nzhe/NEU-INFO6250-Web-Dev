@@ -36,7 +36,7 @@
 * POST /api/v1/session: Create a new session (login).
 * DELETE /api/v1/session: Logout.
 #### Products
-* GET /api/v1/products: Retrieve the products list.
+* GET /api/v1/products: Retrieve the products list (open to all access without auth/authz).
 * PATCH /api/v1/products: Add more products (admin only).
 * POST /api/v1/products: Reset products list to initial status (admin only).
 * DELETE /api/v1/products/:id: Delete a product (admin only).
@@ -44,8 +44,9 @@
 * GET /api/v1/carts: Get the cart for the user.
 * PUT /api/v1/carts/:id: Add an item to the cart for the user.
 * PATCH /api/v1/carts/:id: Change an item's quantity in the cart for the user.
+* DELETE /api/v1/carts/:id: Delete an item in the cart for the user.
 #### Orders
-* GET /api/v1/orders: Get all orders for the user.
+* GET /api/v1/orders: Get all orders of users (admin only).
 * POST /api/v1/orders: Make a new order for the user.
 * DELETE /api/v1/orders/:id: Delete an order (admin only).
 
