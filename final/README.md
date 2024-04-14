@@ -52,8 +52,8 @@
 
 ## Browser Side
 ### Technologies Used
-* **Vite**: Used for building and serving the frontend assets.
-* **React**: Used for building the user interface.
+* **Vite**: Used for serving the frontend assets for development and building the app for a final product.
+* **React**: Used for building and rendering the user interface.
 ### Header
 Displays different buttons based on user's authentication status and permissions: 
 * Not logged in users will see the `Login` button.
@@ -63,10 +63,10 @@ Displays different buttons based on user's authentication status and permissions
 
 ### Pages
 * **Home Page**: Display the header and different views based on user's authentication status and choices. The default view is showing `Products`. 
-* **Products Page**: Display a list of `Products` available for purchase. Users can view product information and add products to their cart.
-* **Cart Page**: Display items in the cart. Users can update quantities, remove items by setting the items' quantity to zero, and proceed to checkout.
+* **Products Page**: Display a list of `Products` available for purchase. Users may view product information and add products to their cart. Administrators may delete products, add products and reset the products to the initial stage.
+* **Cart Page**: Display items in the cart. Users can update quantities, remove items by setting the items' quantity to zero or click `Delete` button, and proceed to checkout.
 * **Login Page**: Form for users to log in.
-* **Orders Page**: Display user's orders. **Visible to admin only**.
+* **Orders Page**: Display users' orders. **Visible to administrators only**.
 
 ## License
 [MIT License](https://choosealicense.com/licenses/mit/)
