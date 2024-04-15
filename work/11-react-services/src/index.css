@@ -1,0 +1,152 @@
+:root {
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  padding: 0.5rem;
+  overflow:auto;
+  background-color: #E8DAEF ;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 97vh;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  border: 0.2em dashed #C39BD3;
+  border-radius: 5px;
+  background-color: #D6EAF8;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-left: 1rem;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.login__form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+
+.word-view {
+  display: grid;
+  grid-template-areas:
+                "user"
+                "main-panel";
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 0;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 30vh;
+  width: 50vh;
+  padding: 0;
+}
+
+.main-panel {
+  display: grid;
+  grid-template-areas:
+                "word"
+                "change-form"
+                "logout";
+  grid-template-rows: 0.4fr 0.2fr 0.5fr;
+  grid-gap: 0;
+  border-radius: 5px;
+  background-color: #E8F5E9;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.current-user {
+  grid-area: user;
+  display: flex;
+  align-self: baseline;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.word__form {
+  grid-area: change-form;
+  align-self: baseline;
+  justify-self: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.logout__button {
+  grid-area: logout;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: baseline;
+  justify-self: center;
+  padding-top: 2em;
+}
+
+.stored-word {
+  grid-area: word;
+  align-self: end;
+  justify-self: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.loading-indicator {
+  position: fixed;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.loading  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.status {
+  background-color: antiquewhite;
+  border-radius: 5px;
+}
+
+
+
