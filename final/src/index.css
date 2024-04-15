@@ -124,8 +124,6 @@ ul {
   margin-right: 0.5rem;
 }
 
-
-
 .header__admin,
 .header__banned,
 .header,
@@ -235,6 +233,7 @@ ul {
   margin-top: 0.5em;
   border-radius: 5px;
 }
+
 .product__back_soon {
   margin-top: 0.5em;
   border-radius: 5px;
@@ -322,7 +321,6 @@ ul {
   height: 90px;
 }
 
-
 .cart .product .product__info {
   grid-area: info;
   display: grid;
@@ -399,6 +397,7 @@ ul {
 
 .order button {
   margin: 0 0.1em;
+  border-radius: 5px;
 }
 
 .bottom {

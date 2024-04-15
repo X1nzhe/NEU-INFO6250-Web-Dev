@@ -24,7 +24,7 @@ function Products({
 
 	return (
 		<div className="content">
-			{show === SHOW.PENDING && <Loading className="products__waiting">Loading Products...</Loading>}
+			{show === SHOW.PENDING && <Loading className="products__waiting"></Loading>}
 			{show === SHOW.EMPTY &&
 				<>
 					<p className="products__empty">No product for sell.</p>

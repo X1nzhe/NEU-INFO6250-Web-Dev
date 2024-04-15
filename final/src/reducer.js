@@ -34,7 +34,6 @@ function reducer(state, action) {
 			return {
 				...state,
 				error: '',
-				isPageLoading: false,
 				loginStatus: permissionToLoginStatus(action.permission),
 				username: action.username,
 				currentPage: VIEWS.PRODUCTS,
@@ -53,7 +52,6 @@ function reducer(state, action) {
 				error: '',
 				username: '',
 				loginStatus: LOGIN_STATUS.NOT_LOGGED_IN,
-				isPageLoading: false,
 				isCheckingOut: false,
 				cart: {},
 				cartItemsCount: 0,

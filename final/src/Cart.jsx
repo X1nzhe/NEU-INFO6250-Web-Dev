@@ -25,14 +25,14 @@ function Cart({
             {show === SHOW.PENDING && (
                 isCheckingOut
                     ? <Loading className="cart__waiting">Checking out...</Loading>
-                    : <Loading className="cart__waiting">Loading Shopping Cart...</Loading>
+                    : <Loading className="cart__waiting"></Loading>
             )}
             {show === SHOW.EMPTY && (
                 lastOrderId
                     ? <div className="cart__ordered">
                         <p>Thanks for shopping with us!</p>
                         <p>Remember your order ID: {lastOrderId}.</p>
-                        <p>You will be redirected to the Home page in {REDIRECTING_DELAY / 1000} seconds...</p>
+                        <p>You will be redirected to the home page in {REDIRECTING_DELAY / 1000} seconds...</p>
                     </div>
                     : <p className="cart__empty">Your shopping cart is empty.</p>
             )}

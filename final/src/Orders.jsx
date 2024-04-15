@@ -14,7 +14,7 @@ function Orders({isPageLoading, orders, onDeleteOrder}) {
 
     return (
         <div className='content'>
-            {show === SHOW.PENDING && <Loading className="orders__waiting">Loading Orders...</Loading>}
+            {show === SHOW.PENDING && <Loading className="orders__waiting"></Loading>}
             {show === SHOW.EMPTY && <p className="orders__empty">No order yet.</p>}
             {show === SHOW.CONTENT && (
                 <>

@@ -1,5 +1,4 @@
 export const POLLING_DELAY = 5000; // 5 seconds
-export const LOADING_DELAY = 2000;// 2 seconds
 export const REDIRECTING_DELAY = 10000; // 10 seconds
 export const VIEWS = {
 	PRODUCTS: 'products',
